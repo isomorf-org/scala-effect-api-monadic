@@ -124,6 +124,8 @@ commands += Command.command("makeDocs") {
 
 autoAPIMappings := true
 
+scalacOptions in (Compile,doc) := Seq("-groups", "-implicits")
+
 enablePlugins(SiteScaladocPlugin)
 
 siteSubdirName in SiteScaladoc := "scaladocs/api/" + version.value

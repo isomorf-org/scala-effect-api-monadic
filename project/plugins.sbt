@@ -10,4 +10,6 @@ addSbtPlugin("com.typesafe.sbt"        % "sbt-site"                 % "1.3.2")
 
 addSbtPlugin("com.github.bdkent"       % "sbt-ghdocver"             % "0.1.1")
 
+addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "2.1.0")
+
 addSbtPlugin("com.typesafe.sbt" % "sbt-osgi" % "0.9.4")
