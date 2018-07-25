@@ -14,9 +14,9 @@ artifact = "effect-api-monadic"
 ![Maven Central](https://img.shields.io/maven-central/v/org.isomorf/effect-api-monadic_2.12.svg?style=for-the-badge)
 
 ```scala
-libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "0.1.0"
+libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "@VERSION@"
 ```
 
 ## Documentation
 
-[scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/0.1.0/org/isomorf/foundation/runtime/effects/index.html)
+[scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/@VERSION@/org/isomorf/foundation/runtime/effects/index.html)
