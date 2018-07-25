@@ -14,4 +14,4 @@ libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "0.1.0"
 
 ## Documentation
 
-[scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/0.1.0/org/isomorf/foundation/runtime/effects/index.html)
+[scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/0.1.0/org/isomorf/runtime/effect/api/monadic)

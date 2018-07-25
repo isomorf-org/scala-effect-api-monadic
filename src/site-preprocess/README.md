@@ -14,4 +14,4 @@ libraryDependencies += "@ORGANIZATION@" %% "@ARTIFACT@" % "@VERSION@"
 
 ## Documentation
 
-[scaladocs](http://@PROJECT_ORG@.github.io/@PROJECT@/scaladocs/api/@VERSION@/org/isomorf/foundation/runtime/effects/index.html)
+[scaladocs](http://@PROJECT_ORG@.github.io/@PROJECT@/scaladocs/api/@VERSION@/org/isomorf/runtime/effect/api/monadic)
