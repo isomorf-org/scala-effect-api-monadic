@@ -1,0 +1,75 @@
+// Add eclipse resource filters to the .project file
+EclipseKeys.projectTransformerFactories ++= Seq(transformNode("projectDescription", DefaultTransforms.Append(<filteredResources>
+	<filter>
+		<id>1440448189826</id>
+		<name></name>
+		<type>10</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-name-matches-false-false-.git</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189827</id>
+		<name />
+		<type>6</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-.project</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189828</id>
+		<name />
+		<type>6</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-.classpath</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189829</id>
+		<name />
+		<type>10</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-.settings</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189830</id>
+		<name></name>
+		<type>10</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-node_modules</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189831</id>
+		<name></name>
+		<type>26</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-project/project</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189832</id>
+		<name></name>
+		<type>26</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-false-project/target</arguments>
+		</matcher>
+	</filter>
+	<filter>
+		<id>1440448189833</id>
+		<name>target</name>
+		<type>29</type>
+		<matcher>
+			<id>org.eclipse.ui.ide.multiFilter</id>
+			<arguments>1.0-projectRelativePath-matches-false-true-target/scala-[0-9].[0-9][0-9]|target/scala-[0-9].[0-9][0-9]/classes_managed|target/scala-[0-9].[0-9][0-9]/classes_managed/.*|target/scala-[0-9].[0-9][0-9]/test-classes_managed|target/scala-[0-9].[0-9][0-9]/test-classes_managed/.*</arguments>
+		</matcher>
+	</filter>
+</filteredResources>)))
