@@ -122,6 +122,8 @@ commands += Command.command("makeDocs") {
   "makeSite" :: "ghdvCopyReadme" :: "ghdvCopyScaladocs" ::  _
 }
 
+autoAPIMappings := true
+
 enablePlugins(SiteScaladocPlugin)
 
 siteSubdirName in SiteScaladoc := "scaladocs/api/" + version.value
