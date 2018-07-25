@@ -1,22 +1,17 @@
----
-organization = "org.isomorf"
-project = "scala-effect-api-monadic"
-artifact = "effect-api-monadic"
----
 
 [//]: # (NOTE: do not edit `README.md` in root, only edit from `src/site-preprocess/README.md`)
 
 
-# effect-api-monadic
+# @ARTIFACT@
 
 ## Installation
 
-![Maven Central](https://img.shields.io/maven-central/v/org.isomorf/effect-api-monadic_2.12.svg?style=for-the-badge)
+![Maven Central](https://img.shields.io/maven-central/v/@ORGANIZATION@/@ARTIFACT@_2.12.svg?style=for-the-badge)
 
 ```scala
-libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "@VERSION@"
+libraryDependencies += "@ORGANIZATION@" %% "@ARTIFACT@" % "@VERSION@"
 ```
 
 ## Documentation
 
-[scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/@VERSION@/org/isomorf/foundation/runtime/effects/index.html)
+[scaladocs](http://@PROJECT_ORG@.github.io/@PROJECT@/scaladocs/api/@VERSION@/org/isomorf/foundation/runtime/effects/index.html)

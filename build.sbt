@@ -46,11 +46,17 @@ val crossScalaVersionsGlobal = Seq("2.11.11", scalaVersionGlobal)
 
 crossScalaVersions := crossScalaVersionsGlobal
 
+val artifactGlobal = "effect-api-monadic"
+
+val projectGlobal = "scala-" + artifactGlobal
+
+val projectOrgGlobal = organizationGlobal.split("\\.").reverse.mkString("-")
+
 
 
 val commonSettings = Seq(
   organization := organizationGlobal,
-  name         := "effect-api-monadic",
+  name         := artifactGlobal,
   scalaVersion := scalaVersionGlobal,
   scalacOptions := Seq("-feature", "-unchecked", "-deprecation", "-encoding", "utf8", "-Xlint:_", "-Ywarn-unused-import"),
   crossScalaVersions := crossScalaVersionsGlobal
@@ -58,9 +64,9 @@ val commonSettings = Seq(
 
 val publishingSettings = Seq(
 //useGpg := true,
-  homepage   := Some(url("https://github.com/isomorf-org/scala-effect-api-monadic")),
-  scmInfo    := Some(ScmInfo(url("https://github.com/isomorf-org/scala-effect-api-monadic"),
-                              "git@github.com:isomorf-org/scala-effect-api-monadic.git")),
+  homepage   := Some(url("https://github.com/" + projectOrgGlobal + "/" + projectGlobal)),
+  scmInfo    := Some(ScmInfo(url("https://github.com/" + projectOrgGlobal + "/" + projectGlobal),
+                              "git@github.com:isomorf-org/" + projectGlobal + ".git")),
   developers := List(Developer("bdkent", "Brian Kent", "brian.kent@isomorf.io", url("https://github.com/bdkent"))),
 
   licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
@@ -124,4 +130,10 @@ enablePlugins(PreprocessPlugin)
 
 enablePlugins(SbtGhDocVerPlugin)
 
-preprocessVars in Preprocess := Map("VERSION" -> version.value)
+preprocessVars in Preprocess := Map(
+	"VERSION" -> version.value,
+	"ORGANIZATION" -> organizationGlobal,
+	"PROJECT" -> projectGlobal,
+	"PROJECT_ORG" -> projectOrgGlobal,
+	"ARTIFACT" -> artifactGlobal
+)

@@ -1,8 +1,3 @@
----
-organization = "org.isomorf"
-project = "scala-effect-api-monadic"
-artifact = "effect-api-monadic"
----
 
 [//]: # (NOTE: do not edit `README.md` in root, only edit from `src/site-preprocess/README.md`)
 
