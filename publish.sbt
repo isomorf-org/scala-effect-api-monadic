@@ -5,8 +5,8 @@ import ReleaseTransformations._
 
 // default to unused
 publishArtifact := false
-//skip in publish := true
 publishTo := Some(Resolver.file("Unused transient repository", file("target/unusedrepo")))
+// skip in publish := true
 
 homepage in ThisBuild := Some(url(Common.Publish.homepage))
 
