@@ -12,7 +12,7 @@
 libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "0.1.0"
 ```
 
-## Availablility
+## Availability
 * Scala `2.11`, `2.12`
 * Scala.js `0.6`
 

@@ -12,7 +12,7 @@
 libraryDependencies += "@ORGANIZATION@" %% "@ARTIFACT@" % "@VERSION@"
 ```
 
-## Availablility
+## Availability
 * Scala `2.11`, `2.12`
 * Scala.js `0.6`
 
