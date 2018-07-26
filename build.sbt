@@ -1,5 +1,6 @@
 // shadow sbt-scalajs' crossProject and CrossType from Scala.js 0.6.x
 import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
+import ReleaseTransformations._
 
 enablePlugins(ScalaJSPlugin)
 
