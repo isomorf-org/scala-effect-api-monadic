@@ -3,15 +3,40 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 enablePlugins(ScalaJSPlugin)
 
+import com.typesafe.sbt.pgp.PgpKeys.publishSigned
+
+import ReleaseTransformations._
+
 lazy val root = crossProject(JSPlatform, JVMPlatform)
     .withoutSuffixFor(JVMPlatform)
     .crossType(CrossType.Pure)
     .in(file("."))
     .settings(
-      name := Common.name, // must be here...seems to be artifact of crossProject?
 	  // skip in publish := false,
       publishArtifact := true,
-      publishTo := Some(if (isSnapshot.value) { Opts.resolver.sonatypeSnapshots } else { Opts.resolver.sonatypeStaging })
+      publishTo := Some(if (isSnapshot.value) { Opts.resolver.sonatypeSnapshots } else { Opts.resolver.sonatypeStaging }),
+    )
+    .settings(
+      // HACK: these settings do no seem to respond to being in ThisBuild like you would want:
+      name := Common.name,
+      releasePublishArtifactsAction := PgpKeys.publishSigned.value,
+	  releaseProcess := Seq[ReleaseStep](
+	    checkSnapshotDependencies,
+	    inquireVersions,
+	    runClean,
+	    runTest,
+	    setReleaseVersion,
+	    commitReleaseVersion,
+	    tagRelease,
+	    //publishArtifacts,
+	    releaseStepCommandAndRemaining("+publishArtifacts"),
+	    releaseStepCommand("makeDocs"),
+	    setNextVersion,
+	    commitNextVersion,
+	    releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
+	    pushChanges
+	  )
+      
     )
     .jvmSettings(
       EclipseKeys.withSource := true
