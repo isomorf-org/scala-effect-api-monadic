@@ -33,9 +33,3 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
 lazy val rootJVM = root.jvm
 
 lazy val rootJS = root.js
-
-commands += Command.command("releaser") {
-  "release cross" ::
-  //s"sonatypeReleaseAll ${Common.organization}" ::
-   _
-}

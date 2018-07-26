@@ -37,6 +37,6 @@ releaseProcess in ThisBuild := Seq[ReleaseStep](
 	releaseStepCommand("makeDocs"),
 	setNextVersion,
 	commitNextVersion,
-	releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
+	//releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
 	pushChanges
 )
