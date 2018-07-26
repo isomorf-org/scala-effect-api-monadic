@@ -30,7 +30,7 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
 		tagRelease,
 		//publishArtifacts,
 		releaseStepCommandAndRemaining("+publishArtifacts"),
-		releaseStepCommand("makeDocs"),
+		releaseStepCommandAndRemaining("makeDocs"),
 		setNextVersion,
 		commitNextVersion,
 		//releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
