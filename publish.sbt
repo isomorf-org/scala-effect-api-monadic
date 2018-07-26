@@ -4,9 +4,9 @@ import com.typesafe.sbt.pgp.PgpKeys.publishSigned
 import ReleaseTransformations._
 
 // default to unused
-publishArtifact in ThisBuild := false
-skip in publish := true
-publishTo in ThisBuild := Some(Resolver.file("Unused transient repository", file("target/unusedrepo")))
+publishArtifact := false
+//skip in publish := true
+publishTo := Some(Resolver.file("Unused transient repository", file("target/unusedrepo")))
 
 homepage in ThisBuild := Some(url(Common.Publish.homepage))
 

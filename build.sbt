@@ -9,9 +9,9 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     .in(file("."))
     .settings(
       name := Common.name, // must be here...seems to be artifact of crossProject?
-      skip in publish := false,
-      publishArtifact in (Test, packageBin) := false,
-      publishArtifact in (Test, packageDoc) := false,
+//      skip in publish := false,
+//      publishArtifact in (Test, packageBin) := false,
+//      publishArtifact in (Test, packageDoc) := false,
       publishArtifact := true,
       publishTo := Some(if (isSnapshot.value) { Opts.resolver.sonatypeSnapshots } else { Opts.resolver.sonatypeStaging })
     )
