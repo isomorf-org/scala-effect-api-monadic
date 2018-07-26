@@ -14,9 +14,24 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     )
     .settings(
       // HACK: these settings do no seem to respond to being in ThisBuild like you would want:
-      name := (ThisBuild / name).value,
-      releasePublishArtifactsAction := (ThisBuild / releasePublishArtifactsAction).value,      
-      releaseProcess := (ThisBuild / releaseProcess).value
+      name := Common.name,
+      releasePublishArtifactsAction := PgpKeys.publishSigned.value,      
+      releaseProcess := Seq[ReleaseStep](
+		checkSnapshotDependencies,
+		inquireVersions,
+		runClean,
+		runTest,
+		setReleaseVersion,
+		commitReleaseVersion,
+		tagRelease,
+		//publishArtifacts,
+		releaseStepCommandAndRemaining("+publishArtifacts"),
+		releaseStepCommand("makeDocs"),
+		setNextVersion,
+		commitNextVersion,
+		//releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
+		pushChanges
+	  )
     )
     .jvmSettings(
       EclipseKeys.withSource := true
