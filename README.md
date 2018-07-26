@@ -12,6 +12,10 @@
 libraryDependencies += "org.isomorf" %% "effect-api-monadic" % "0.1.0"
 ```
 
+## Availablility
+* Scala `2.11`, `2.12`
+* Scala.js `0.6`
+
 ## Documentation
 
 [scaladocs](http://isomorf-org.github.io/scala-effect-api-monadic/scaladocs/api/0.1.0/org/isomorf/runtime/effect/api/monadic)

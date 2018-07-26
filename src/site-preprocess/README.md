@@ -12,6 +12,10 @@
 libraryDependencies += "@ORGANIZATION@" %% "@ARTIFACT@" % "@VERSION@"
 ```
 
+## Availablility
+* Scala `2.11`, `2.12`
+* Scala.js `0.6`
+
 ## Documentation
 
 [scaladocs](http://@PROJECT_ORG@.github.io/@PROJECT@/scaladocs/api/@VERSION@/org/isomorf/runtime/effect/api/monadic)
