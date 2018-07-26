@@ -3,10 +3,6 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 enablePlugins(ScalaJSPlugin)
 
-import com.typesafe.sbt.pgp.PgpKeys.publishSigned
-
-import ReleaseTransformations._
-
 lazy val root = crossProject(JSPlatform, JVMPlatform)
     .withoutSuffixFor(JVMPlatform)
     .crossType(CrossType.Pure)
@@ -18,25 +14,8 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     )
     .settings(
       // HACK: these settings do no seem to respond to being in ThisBuild like you would want:
-      name := Common.name,
-      releasePublishArtifactsAction := PgpKeys.publishSigned.value,
-	  releaseProcess := Seq[ReleaseStep](
-	    checkSnapshotDependencies,
-	    inquireVersions,
-	    runClean,
-	    runTest,
-	    setReleaseVersion,
-	    commitReleaseVersion,
-	    tagRelease,
-	    //publishArtifacts,
-	    releaseStepCommandAndRemaining("+publishArtifacts"),
-	    releaseStepCommand("makeDocs"),
-	    setNextVersion,
-	    commitNextVersion,
-	    releaseStepCommand(s"sonatypeReleaseAll ${Common.organization}"),
-	    pushChanges
-	  )
-      
+      name := (ThisBuild / name).value,
+      releasePublishArtifactsAction := (ThisBuild / releasePublishArtifactsAction).value      
     )
     .jvmSettings(
       EclipseKeys.withSource := true
@@ -44,7 +23,7 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     .enablePlugins(SbtOsgi)
     .jvmSettings(osgiSettings)
     .jvmSettings(
-    		(unmanagedResourceDirectories in Compile) += baseDirectory.value / "../src/main/resources",
+    	(unmanagedResourceDirectories in Compile) += baseDirectory.value / "../src/main/resources",
 		OsgiKeys.exportPackage := Common.OSGi.exportPackage,
 		OsgiKeys.importPackage := Common.OSGi.importPackage,
 		OsgiKeys.additionalHeaders := Common.OSGi.additionalHeaders
