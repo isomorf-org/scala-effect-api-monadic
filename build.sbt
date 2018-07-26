@@ -15,7 +15,8 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     .settings(
       // HACK: these settings do no seem to respond to being in ThisBuild like you would want:
       name := (ThisBuild / name).value,
-      releasePublishArtifactsAction := (ThisBuild / releasePublishArtifactsAction).value      
+      releasePublishArtifactsAction := (ThisBuild / releasePublishArtifactsAction).value,      
+      releaseProcess := (ThisBuild / releaseProcess).value,      
     )
     .jvmSettings(
       EclipseKeys.withSource := true
